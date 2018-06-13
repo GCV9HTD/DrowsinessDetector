@@ -17,7 +17,6 @@ def drowsiness_alert():
         for x, y, w, h in eyes:
             frame = cv2.rectangle(gray, (x, y), (x+w, y+h), (0, 255, 0), 3)
 
-        # resized = cv2.resize(frame, (int(frame.shape[1] / 2), int(frame.shape[0] / 2)))
         if gray.all() < 0.3:
             cv2.putText(frame, "Driving", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
         else:
